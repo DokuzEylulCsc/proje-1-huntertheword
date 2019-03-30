@@ -14,7 +14,33 @@ namespace Huntertheword
     {
         public Form1()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
+            
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Baslat_Click(object sender, EventArgs e)
+        {
+            if(KolayButton.Checked==true)
+            {
+                HunterTheWord oyunForm = new HunterTheWord();
+                oyunForm.Show();
+            }
+            else if(OrtaButton.Checked==true)
+            {
+                HunterTheWord oyunForm = new HunterTheWord();
+                oyunForm.Show();
+            }
+            else
+            {
+                HunterTheWord oyunForm = new HunterTheWord();
+                oyunForm.Show();
+            }
         }
     }
 }

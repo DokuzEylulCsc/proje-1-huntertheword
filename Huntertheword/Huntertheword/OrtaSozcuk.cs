@@ -8,5 +8,58 @@ namespace Huntertheword
 {
     class OrtaSozcuk
     {
+        string[] orta =
+        {
+            "kov",
+            "düş",
+            "süt",
+            "yaz",
+            "son",
+            "sağ",
+            "çek",
+            "jet",
+            "not",
+            "oje",
+            "kek",//11 tane 3 harfli         
+            "kedi",
+            "öğüt",
+            "keçi",
+            "bekçi",
+            "yara",
+            "ayar",
+            "meze",
+            "bira",
+            "dart",
+            "ölüm",
+            "bölü",
+            "duyu",
+            "uydu",
+            "onur",
+            "soru",
+            "baca",
+            "kaba",//17 tane 4 harfli
+            "radar",
+            "yazar",
+            "piyaz",
+            "köpek",
+            "bizon",
+            "jeton",
+            "soğan",
+            "beyaz",
+            "siyah",
+            "söğüt",
+            "bölüm",
+            "duygu",
+            "sorun",
+            "bitki",
+            "biber",
+            "bacak",
+            "hepsi",//17 tane 5 harfli
+            "kabile",
+            "yağmur",
+            "rüzğar",
+            "yaprak",
+            "toprak",//5 tane 6 harfli
+        };
     }
 }
