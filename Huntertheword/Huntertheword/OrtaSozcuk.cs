@@ -8,7 +8,9 @@ namespace Huntertheword
 {
     class OrtaSozcuk
     {
-        string[] orta =
+        public void kelimeler()
+        {
+            string[] orta =
         {
             "kov",
             "düş",
@@ -61,5 +63,25 @@ namespace Huntertheword
             "yaprak",
             "toprak",//5 tane 6 harfli
         };
+            Random kelimeleriSec = new Random();
+            int[] randomSayilar = new int[10];//randomdan gelen sayılar aynı olmasın diye gelen sayıları dizide tutuyoruz.
+            Oyun ortaOyun = new Oyun();
+            int i = 0, denetleme;
+            string[] secilenKelimeler = new string[10];
+            while (i < 10)
+            {
+                denetleme = kelimeleriSec.Next(51);
+                if (randomSayilar.Contains(denetleme) == false)//sayılar farklı olsun deyi contains metodunu kullandım(false ise farklı)
+                {
+                    secilenKelimeler[i] = orta[denetleme];//secilen kelimeleri yerleştirdik
+                }
+
+
+                i++;
+            }
+
+            ortaOyun.Baslat(secilenKelimeler);//Oyun clasına kelimelerimizi gönderdik
+        }
+        
     }
 }

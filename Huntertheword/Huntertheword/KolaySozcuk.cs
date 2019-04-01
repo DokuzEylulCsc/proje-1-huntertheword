@@ -9,8 +9,10 @@ namespace Huntertheword
     class KolaySozcuk:Sozcuk
     {
         
-        public void  deneme()
+        public void  kelimeler()
         {
+            Random kelimeleriSec = new Random();
+            int[] randomSayilar = new int[10];//randomdan gelen sayılar aynı olmasın diye gelen sayıları dizide tutuyoruz.
             string[] kolay = {
                 "ad",
                 "at",
@@ -76,8 +78,23 @@ namespace Huntertheword
                
 
 
-            };
+            };          
+            Oyun kolayOyun = new Oyun();
+            int i = 0,denetleme;
+            string[] secilenKelimeler = new string[10];
+            while(i<10)
+            {
+                denetleme = kelimeleriSec.Next(51);
+                if (randomSayilar.Contains(denetleme)==false)//sayılar farklı olsun deyi contains metodunu kullandım(false ise farklı)
+                {
+                    secilenKelimeler[i] = kolay[denetleme];//secilen kelimeleri yerleştirdik
+                }
 
+                
+                i++;
+            }
+    
+           kolayOyun.Baslat(secilenKelimeler);//Oyun clasına kelimelerimizi gönderdik
             
         }
     }

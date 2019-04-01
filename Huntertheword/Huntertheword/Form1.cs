@@ -16,7 +16,7 @@ namespace Huntertheword
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
-            
+           
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -24,23 +24,37 @@ namespace Huntertheword
 
         }
 
-        private void Baslat_Click(object sender, EventArgs e)
+        private void  Baslat_Click(object sender, EventArgs e)
         {
-            if(KolayButton.Checked==true)
+            Sozcuk derece = new Sozcuk();
+            // radio butonunda seçilen zorluk derecesine göre sozcuk clasına zorluk derecesini yönlendirdim.
+            if (KolayButton.Checked==true)
             {
+                
                 HunterTheWord oyunForm = new HunterTheWord();
+                derece.deneme("kolay");
                 oyunForm.Show();
+              
             }
             else if(OrtaButton.Checked==true)
             {
                 HunterTheWord oyunForm = new HunterTheWord();
+                derece.deneme("orta");
                 oyunForm.Show();
             }
             else
             {
                 HunterTheWord oyunForm = new HunterTheWord();
+                derece.deneme("zor");
                 oyunForm.Show();
             }
+        }
+
+        private void bilgiButonu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Oyun 3 derece zorluktan oluşur." +
+                "Her oyun için 10 kelime önünüze çıkacak ve her kelime için 10 hakkınız olacak." +
+                "Her doğru cevabınızda 10 puan kazanacaksınız.");
         }
     }
 }

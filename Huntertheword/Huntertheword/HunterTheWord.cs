@@ -17,9 +17,18 @@ namespace Huntertheword
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void kontrolEt_Click(object sender, EventArgs e)
         {
-
+            
+        }
+        public void kelimeleriGöster(string[] oyunKelimeleri)
+        {
+            MessageBox.Show("geldim buradayım");
+            for (int i = 0; i <10; i++)
+             {
+                 listBox1.Items.Add(oyunKelimeleri[i]);
+             }
+                
         }
     }
 }

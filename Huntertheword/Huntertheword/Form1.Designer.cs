@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Baslat = new System.Windows.Forms.Button();
             this.KolayButton = new System.Windows.Forms.RadioButton();
             this.OrtaButton = new System.Windows.Forms.RadioButton();
             this.ZorButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bilgiButonu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,18 +92,31 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Huntertheword.Properties.Resources.nesne;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(640, 360);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // bilgiButonu
+            // 
+            this.bilgiButonu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bilgiButonu.ForeColor = System.Drawing.Color.Coral;
+            this.bilgiButonu.Location = new System.Drawing.Point(12, 425);
+            this.bilgiButonu.Name = "bilgiButonu";
+            this.bilgiButonu.Size = new System.Drawing.Size(87, 80);
+            this.bilgiButonu.TabIndex = 7;
+            this.bilgiButonu.Text = "Bilgi";
+            this.bilgiButonu.UseVisualStyleBackColor = true;
+            this.bilgiButonu.Click += new System.EventHandler(this.bilgiButonu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 554);
+            this.Controls.Add(this.bilgiButonu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ZorButton);
             this.Controls.Add(this.OrtaButton);
@@ -125,6 +140,7 @@
         private System.Windows.Forms.RadioButton OrtaButton;
         private System.Windows.Forms.RadioButton ZorButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button bilgiButonu;
     }
 }
 
