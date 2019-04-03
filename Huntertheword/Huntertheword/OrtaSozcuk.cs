@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    class OrtaSozcuk
+    class OrtaSozcuk : Sozcuk
     {
-        public void kelimeler()
-        {
-            string[] orta =
-        {
+        string[] orta =
+    {
             "kov",
             "düş",
             "süt",
@@ -63,25 +61,35 @@ namespace Huntertheword
             "yaprak",
             "toprak",//5 tane 6 harfli
         };
-            Random kelimeleriSec = new Random();
-            int[] randomSayilar = new int[10];//randomdan gelen sayılar aynı olmasın diye gelen sayıları dizide tutuyoruz.
-            Oyun ortaOyun = new Oyun();
-            int i = 0, denetleme;
+        Random kelimeleriSec = new Random();
+
+        public override string[] kelimeGetir()
+        {
             string[] secilenKelimeler = new string[10];
-            while (i < 10)
+
+            Random random = new Random();
+            List<int> randomNumbers = new List<int>();
+            int number;
+
+
+            for (int i = 0; i < 10; i++)
             {
-                denetleme = kelimeleriSec.Next(51);
-                if (randomSayilar.Contains(denetleme) == false)//sayılar farklı olsun deyi contains metodunu kullandım(false ise farklı)
+                do
                 {
-                    secilenKelimeler[i] = orta[denetleme];//secilen kelimeleri yerleştirdik
-                }
+                    number = random.Next(0, 50);
+                } while (randomNumbers.Contains(number));
 
-
-                i++;
+                randomNumbers.Add(number);
+                secilenKelimeler[i] = orta[number];
             }
 
-            ortaOyun.Baslat(secilenKelimeler);//Oyun clasına kelimelerimizi gönderdik
+            return secilenKelimeler;
         }
-        
+
+        public override String[] getir()
+        {
+            return orta;
+        }
+
     }
 }

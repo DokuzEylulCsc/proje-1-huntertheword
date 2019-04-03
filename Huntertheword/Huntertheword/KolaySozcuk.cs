@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    class KolaySozcuk:Sozcuk
+    public class KolaySozcuk : Sozcuk
     {
-        
-        public void  kelimeler()
-        {
-            Random kelimeleriSec = new Random();
-            int[] randomSayilar = new int[10];//randomdan gelen sayılar aynı olmasın diye gelen sayıları dizide tutuyoruz.
-            string[] kolay = {
+        string[] kolay = {
                 "ad",
                 "at",
                 "af",
@@ -66,36 +61,35 @@ namespace Huntertheword
                 "çiçek",
                 "deniz",
                 "tatil",//6 tane 5 harfli
-                
- 
+            };
+        Random kelimeleriSec = new Random();
 
-
-
-
-
-                
-                
-               
-
-
-            };          
-            Oyun kolayOyun = new Oyun();
-            int i = 0,denetleme;
+        public override string[] kelimeGetir()
+        {
             string[] secilenKelimeler = new string[10];
-            while(i<10)
-            {
-                denetleme = kelimeleriSec.Next(51);
-                if (randomSayilar.Contains(denetleme)==false)//sayılar farklı olsun deyi contains metodunu kullandım(false ise farklı)
-                {
-                    secilenKelimeler[i] = kolay[denetleme];//secilen kelimeleri yerleştirdik
-                }
 
-                
-                i++;
+            Random random = new Random();
+            List<int> randomNumbers = new List<int>();
+            int number;
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                do
+                {
+                    number = random.Next(0, 50);
+                } while (randomNumbers.Contains(number));
+
+                randomNumbers.Add(number);
+                secilenKelimeler[i] = kolay[number];
             }
-    
-           kolayOyun.Baslat(secilenKelimeler);//Oyun clasına kelimelerimizi gönderdik
-            
+
+            return secilenKelimeler;
+        }
+
+        public override String[] getir()
+        {
+            return kolay;
         }
     }
 }

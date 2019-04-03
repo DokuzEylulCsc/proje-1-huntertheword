@@ -41,10 +41,9 @@
             // Baslat
             // 
             this.Baslat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Baslat.Location = new System.Drawing.Point(156, 455);
-            this.Baslat.Margin = new System.Windows.Forms.Padding(4);
+            this.Baslat.Location = new System.Drawing.Point(117, 370);
             this.Baslat.Name = "Baslat";
-            this.Baslat.Size = new System.Drawing.Size(361, 50);
+            this.Baslat.Size = new System.Drawing.Size(271, 41);
             this.Baslat.TabIndex = 1;
             this.Baslat.Text = "YENİ OYUN";
             this.Baslat.UseVisualStyleBackColor = true;
@@ -54,10 +53,9 @@
             // 
             this.KolayButton.AutoSize = true;
             this.KolayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.KolayButton.Location = new System.Drawing.Point(156, 407);
-            this.KolayButton.Margin = new System.Windows.Forms.Padding(4);
+            this.KolayButton.Location = new System.Drawing.Point(117, 331);
             this.KolayButton.Name = "KolayButton";
-            this.KolayButton.Size = new System.Drawing.Size(80, 21);
+            this.KolayButton.Size = new System.Drawing.Size(65, 17);
             this.KolayButton.TabIndex = 3;
             this.KolayButton.TabStop = true;
             this.KolayButton.Text = "KOLAY";
@@ -68,10 +66,9 @@
             // 
             this.OrtaButton.AutoSize = true;
             this.OrtaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.OrtaButton.Location = new System.Drawing.Point(313, 407);
-            this.OrtaButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OrtaButton.Location = new System.Drawing.Point(235, 331);
             this.OrtaButton.Name = "OrtaButton";
-            this.OrtaButton.Size = new System.Drawing.Size(72, 21);
+            this.OrtaButton.Size = new System.Drawing.Size(59, 17);
             this.OrtaButton.TabIndex = 4;
             this.OrtaButton.TabStop = true;
             this.OrtaButton.Text = "ORTA";
@@ -81,10 +78,9 @@
             // 
             this.ZorButton.AutoSize = true;
             this.ZorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ZorButton.Location = new System.Drawing.Point(455, 407);
-            this.ZorButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ZorButton.Location = new System.Drawing.Point(341, 331);
             this.ZorButton.Name = "ZorButton";
-            this.ZorButton.Size = new System.Drawing.Size(62, 21);
+            this.ZorButton.Size = new System.Drawing.Size(51, 17);
             this.ZorButton.TabIndex = 5;
             this.ZorButton.TabStop = true;
             this.ZorButton.Text = "ZOR";
@@ -93,9 +89,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(640, 360);
+            this.pictureBox1.Size = new System.Drawing.Size(480, 292);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -103,9 +100,10 @@
             // 
             this.bilgiButonu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bilgiButonu.ForeColor = System.Drawing.Color.Coral;
-            this.bilgiButonu.Location = new System.Drawing.Point(12, 425);
+            this.bilgiButonu.Location = new System.Drawing.Point(9, 345);
+            this.bilgiButonu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bilgiButonu.Name = "bilgiButonu";
-            this.bilgiButonu.Size = new System.Drawing.Size(87, 80);
+            this.bilgiButonu.Size = new System.Drawing.Size(65, 65);
             this.bilgiButonu.TabIndex = 7;
             this.bilgiButonu.Text = "Bilgi";
             this.bilgiButonu.UseVisualStyleBackColor = true;
@@ -113,16 +111,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 554);
-            this.Controls.Add(this.bilgiButonu);
+            this.ClientSize = new System.Drawing.Size(490, 450);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.bilgiButonu);
             this.Controls.Add(this.ZorButton);
             this.Controls.Add(this.OrtaButton);
             this.Controls.Add(this.KolayButton);
             this.Controls.Add(this.Baslat);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

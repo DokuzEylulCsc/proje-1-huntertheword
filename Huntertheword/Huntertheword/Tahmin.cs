@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    class Tahmin
+    class Tahmin // interface kullanilabilir
     {
         private char[] tahmin;
         private int tahminSayisi;

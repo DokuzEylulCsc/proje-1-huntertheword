@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    public abstract class Sozcuk // abstract
+    //Kaydedici sınıfı ise log ve istatistiklerden sorumlu olacaktır.
+    class Kaydedici
     {
-        public abstract string[] kelimeGetir();
 
-        public abstract string[] getir();
     }
 }

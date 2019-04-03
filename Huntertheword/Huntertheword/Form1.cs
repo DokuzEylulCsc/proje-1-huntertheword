@@ -16,7 +16,7 @@ namespace Huntertheword
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
-           
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -24,28 +24,32 @@ namespace Huntertheword
 
         }
 
-        private void  Baslat_Click(object sender, EventArgs e)
+        private void Baslat_Click(object sender, EventArgs e)
         {
-            Sozcuk derece = new Sozcuk();
+            //Sozcuk derece = new Sozcuk();
+            HunterTheWord oyunForm = new HunterTheWord();
+
             // radio butonunda seçilen zorluk derecesine göre sozcuk clasına zorluk derecesini yönlendirdim.
-            if (KolayButton.Checked==true)
+            if (KolayButton.Checked == true)
             {
-                
-                HunterTheWord oyunForm = new HunterTheWord();
-                derece.deneme("kolay");
+                //Oyun oyun1 = new Oyun();
+                //oyun1.Sozcugum = new KolaySozcuk();
+
+                //oyunForm.kelimeleriGoster(oyun1.Sozcugum.getir());
+
+                //oyun1.Baslat(deneme2);
+                //kolay.KelimeZorlukSecimi("kolay);
+
                 oyunForm.Show();
-              
+
             }
-            else if(OrtaButton.Checked==true)
+            else if (OrtaButton.Checked == true)
             {
-                HunterTheWord oyunForm = new HunterTheWord();
-                derece.deneme("orta");
+                //Oyun ortaOyun = new Oyun();
                 oyunForm.Show();
             }
             else
             {
-                HunterTheWord oyunForm = new HunterTheWord();
-                derece.deneme("zor");
                 oyunForm.Show();
             }
         }

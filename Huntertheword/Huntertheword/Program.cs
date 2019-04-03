@@ -14,6 +14,14 @@ namespace Huntertheword
         [STAThread]
         static void Main()
         {
+            Oyun oyun1 = new Oyun("orta");
+            oyun1.Baslat();
+            for(int i = 0; i < oyun1.SozcukHaznem.kelimeGetir().Length; i++)
+            {
+                Console.WriteLine(oyun1.SozcukHaznem.kelimeGetir()[i]);
+            }
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

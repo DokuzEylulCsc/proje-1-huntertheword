@@ -6,13 +6,39 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    class Oyun
+    public class Oyun
     {
-      
-        public void Baslat(string[] oyunKelimeleri)
+        private Sozcuk sozcukhaznem;
+
+        public Sozcuk SozcukHaznem { get => sozcukhaznem; set => sozcukhaznem = value; }
+
+        //Oyun sınıfı ise oyunu başlatma ve bitirme görevlerini yerine getirecektir.
+        public Oyun(string zorluk)
         {
-            HunterTheWord formaGonder = new HunterTheWord();
-            formaGonder.kelimeleriGöster(oyunKelimeleri);
+            if (zorluk == "kolay")
+                this.SozcukHaznem = new KolaySozcuk();
+            else if (zorluk == "orta")
+                this.SozcukHaznem = new OrtaSozcuk();
+            else if (zorluk == "zor")
+                this.SozcukHaznem = new ZorSozcuk();
+        }
+
+        public void Baslat()
+        {
+            //string[] oyunKelimeleri = new string[1];
+            //HunterTheWord formaGonder = new HunterTheWord();
+            //formaGonder.Show();
+            //formaGonder.kelimeleriGoster(oyunKelimeleri);
+        }
+
+        public void Bitir()
+        {
+
+        }
+
+        public void Dongu()
+        {
+
         }
     }
 }

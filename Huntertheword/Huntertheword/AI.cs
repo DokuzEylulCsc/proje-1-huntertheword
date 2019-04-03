@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    public abstract class Sozcuk // abstract
+    //AI sınıfı sözcük seçme, Oyuncunun sınıfının örneklerinden gelecek tahminlere cevap verme gibi görevleri yerine getirecektir.
+    class AI
     {
-        public abstract string[] kelimeGetir();
-
-        public abstract string[] getir();
     }
 }

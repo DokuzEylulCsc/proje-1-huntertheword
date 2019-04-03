@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    public abstract class Sozcuk // abstract
+    class Tur
     {
-        public abstract string[] kelimeGetir();
-
-        public abstract string[] getir();
     }
 }
