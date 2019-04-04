@@ -21,14 +21,5 @@ namespace Huntertheword
         {
             
         }
-
-        public void kelimeleriGoster(string[] oyunKelimeleri)
-        {
-            //MessageBox.Show("geldim buradayım");
-            for (int i = 0; i <oyunKelimeleri.Length; i++)
-             {
-                 listBox1.Items.Add(oyunKelimeleri[i]);
-             }
-        }
     }
 }

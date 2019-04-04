@@ -12,6 +12,8 @@ namespace Huntertheword
 {
     public partial class Form1 : Form
     {
+        // Yeniden yazilacak
+
         public Form1()
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -26,7 +28,6 @@ namespace Huntertheword
 
         private void Baslat_Click(object sender, EventArgs e)
         {
-            //Sozcuk derece = new Sozcuk();
             HunterTheWord oyunForm = new HunterTheWord();
 
             // radio butonunda seçilen zorluk derecesine göre sozcuk clasına zorluk derecesini yönlendirdim.

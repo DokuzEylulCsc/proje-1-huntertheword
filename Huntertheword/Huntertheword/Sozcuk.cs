@@ -9,7 +9,5 @@ namespace Huntertheword
     public abstract class Sozcuk // abstract
     {
         public abstract string[] kelimeGetir();
-
-        public abstract string[] getir();
     }
 }

@@ -62,7 +62,6 @@ namespace Huntertheword
                 "deniz",
                 "tatil",//6 tane 5 harfli
             };
-        Random kelimeleriSec = new Random();
 
         public override string[] kelimeGetir()
         {
@@ -71,7 +70,6 @@ namespace Huntertheword
             Random random = new Random();
             List<int> randomNumbers = new List<int>();
             int number;
-
 
             for (int i = 0; i < 10; i++)
             {
@@ -85,11 +83,6 @@ namespace Huntertheword
             }
 
             return secilenKelimeler;
-        }
-
-        public override String[] getir()
-        {
-            return kolay;
         }
     }
 }

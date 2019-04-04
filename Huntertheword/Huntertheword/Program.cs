@@ -8,23 +8,22 @@ namespace Huntertheword
 {
     static class Program
     {
+        //Programınızın giriş noktası olan Program sınıfındaki
+        //Main metodu ise yalnızca Oyun sınıfının bir örneğine sahip olacaktır.
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Oyun oyun1 = new Oyun("orta");
-            oyun1.Baslat();
-            for(int i = 0; i < oyun1.SozcukHaznem.kelimeGetir().Length; i++)
-            {
-                Console.WriteLine(oyun1.SozcukHaznem.kelimeGetir()[i]);
-            }
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1()); // ilk ekran, oyun zorluk secimi simdilik asagidaki sekilde secilsin
+
+            Oyun oyun1 = new Oyun("orta");
+            oyun1.Baslat();
+            Application.Run(oyun1.GetirForm());
         }
     }
 }

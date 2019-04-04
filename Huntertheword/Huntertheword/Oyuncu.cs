@@ -10,9 +10,19 @@ namespace Huntertheword
     //AI sınıfına/nesnesine göndermek ve gelen sonuçları program kullanıcısına bildirmekle görevlidir.
 
     //skor ve can bilgisi property olarak eklenecek
-    class Oyuncu
+    public class Oyuncu
     {
-        Oyuncu()
+        public Oyuncu()
+        {
+
+        }
+
+        public void KelimeleriAIyaGonder()
+        {
+
+        }
+
+        public void KullanicidanGirdiAl()
         {
 
         }

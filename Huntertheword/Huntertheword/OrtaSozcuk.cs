@@ -61,7 +61,6 @@ namespace Huntertheword
             "yaprak",
             "toprak",//5 tane 6 harfli
         };
-        Random kelimeleriSec = new Random();
 
         public override string[] kelimeGetir()
         {
@@ -85,11 +84,5 @@ namespace Huntertheword
 
             return secilenKelimeler;
         }
-
-        public override String[] getir()
-        {
-            return orta;
-        }
-
     }
 }

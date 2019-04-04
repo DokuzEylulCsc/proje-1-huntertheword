@@ -61,7 +61,6 @@ namespace Huntertheword
             "asosyal",
             "avokado",//8 tane 7 harfli
         };
-        Random kelimeleriSec = new Random();
 
         public override string[] kelimeGetir()
         {
@@ -85,11 +84,5 @@ namespace Huntertheword
 
             return secilenKelimeler;
         }
-
-        public override String[] getir()
-        {
-            return zor;
-        }
-
     }
 }
