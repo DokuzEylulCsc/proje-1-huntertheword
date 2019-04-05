@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Huntertheword
@@ -19,11 +16,8 @@ namespace Huntertheword
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1()); // ilk ekran, oyun zorluk secimi simdilik asagidaki sekilde secilsin
+            Application.Run(new Form1()); 
 
-            Oyun oyun1 = new Oyun("orta");
-            oyun1.Baslat();
-            Application.Run(oyun1.GetirForm());
         }
     }
 }
