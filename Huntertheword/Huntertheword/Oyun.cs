@@ -13,16 +13,12 @@ namespace Huntertheword
         private static System.Timers.Timer myTimer;
         private static Stopwatch sw = new Stopwatch();
         private Sozcuk sozcukhaznem;
-        private AI yapayZeka = new AI();
-        private Oyuncu kullanici;
         private int oyunSuresi = 60; // oyun suresi simdilik 60 sn
         //private static int sayac = 0;
 
         private static HunterTheWord hunterForm = new HunterTheWord(); // Form
 
         public Sozcuk SozcukHaznem { get => sozcukhaznem; set => sozcukhaznem = value; }
-        internal AI YapayZeka { get => yapayZeka; set => yapayZeka = value; }
-        internal Oyuncu Kullanici { get => kullanici; set => kullanici = value; }
         public static HunterTheWord HunterForm { get => hunterForm; set => hunterForm = value; }
 
         //Oyun sınıfı ise oyunu başlatma ve bitirme görevlerini yerine getirecektir.
@@ -71,6 +67,7 @@ namespace Huntertheword
 
         public HunterTheWord GetirForm()
         {
+
             return HunterForm;
         }
     }

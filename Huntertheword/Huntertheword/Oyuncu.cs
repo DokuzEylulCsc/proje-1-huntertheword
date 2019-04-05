@@ -10,20 +10,25 @@ namespace Huntertheword
     //AI sınıfına/nesnesine göndermek ve gelen sonuçları program kullanıcısına bildirmekle görevlidir.
 
     //skor ve can bilgisi property olarak eklenecek
-    public class Oyuncu
+    public static class Oyuncu
     {
-        public Oyuncu()
-        {
 
+        private static void TahminiYapayZekayaGonder(string kullaniciTahmini)
+        {
+            AI.TahmineCevapVer(kullaniciTahmini);
         }
 
-        public void KelimeleriAIyaGonder()
+        public static bool KullanicidanGirdiAl(string kullaniciTahmini, int tahminUzunlugu)
         {
-
-        }
-
-        public void KullanicidanGirdiAl()
-        {
+            if (Tahmin.girdiDogruMu(kullaniciTahmini, tahminUzunlugu))
+            {
+                TahminiYapayZekayaGonder(kullaniciTahmini);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
     }

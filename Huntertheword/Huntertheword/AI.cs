@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 namespace Huntertheword
 {
     //AI sınıfı sözcük seçme, Oyuncunun sınıfının örneklerinden gelecek tahminlere cevap verme gibi görevleri yerine getirecektir.
-    public class AI
+    public static class AI
     {
-        public AI()
-        {
 
-        }
 
-        public string[] kelimeSun(Sozcuk sozcuk)
+        public static string[] kelimeSun(Sozcuk sozcuk)
         {
             return sozcuk.kelimeGetir();
         }
 
-        public void tahminlereCevapVer()
+        public static void TahmineCevapVer(string kullaniciTahmini)
         {
 
         }

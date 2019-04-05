@@ -6,30 +6,27 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    class Tahmin // interface kullanilabilir
+    static class Tahmin // interface kullanilabilir
     {
-        private char[] tahmin;
-        private int tahminSayisi;
-        private DateTime tahminBaslangic;
-        private DateTime tahminBitis;
-        private int[] alfabeSayac;
 
-        Tahmin()
+        public static bool girdiDogruMu(string kullaniciTahmin, int tahminUzunluk) // exc handling eklenecek
         {
-            for (int i = 0; i < 28; i++)
-                alfabeSayac[i] = 0;
-        }
+            if (kullaniciTahmin.Length == 0 || kullaniciTahmin.Length != tahminUzunluk)
+                return false;
 
-        public void GecersizTahmin() // exc handling eklenecek
-        {
-            try
-            {
-                
-            }
-            catch
-            {
+            if (kullaniciTahmin.IndexOfAny("xqwQWX1234567890".ToCharArray()) != -1)
+                return false;
 
+            char[] tahmin = kullaniciTahmin.ToCharArray();
+            for (int i = 0; i < tahmin.Length; i++)
+            {
+                if (!Char.IsLetterOrDigit(tahmin[i]))
+                {
+                    return false;
+                }
             }
+
+            return true;
         }
     }
 }
