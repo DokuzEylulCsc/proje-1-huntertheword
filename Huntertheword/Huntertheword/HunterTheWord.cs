@@ -38,5 +38,9 @@ namespace Huntertheword
              * Bu metodu temp olarak açtım değiştirilebilir.
              */
         }
+        public void sureGonder(int sure)
+        {
+            sureLabel.Text = " " + sure;
+        }
     }
 }

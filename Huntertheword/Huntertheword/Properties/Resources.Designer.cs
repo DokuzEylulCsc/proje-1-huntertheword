@@ -63,6 +63,16 @@ namespace Huntertheword.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap izmir_saat_kulesi_genel_gorunum {
+            get {
+                object obj = ResourceManager.GetObject("izmir-saat-kulesi-genel-gorunum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap nesne {
             get {
                 object obj = ResourceManager.GetObject("nesne", resourceCulture);

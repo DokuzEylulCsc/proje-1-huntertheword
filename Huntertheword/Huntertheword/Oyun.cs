@@ -67,7 +67,7 @@ namespace Huntertheword
 
         public HunterTheWord GetirForm()
         {
-
+            hunterForm.sureGonder(sw.Elapsed.Seconds);
             return HunterForm;
         }
     }
