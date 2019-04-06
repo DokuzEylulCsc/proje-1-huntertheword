@@ -46,6 +46,11 @@ namespace Huntertheword
 
         }
 
+        internal void Bitir(string v, object oyuncuİsimi)
+        {
+            throw new NotImplementedException();
+        }
+
         private void OyunDongusu(Object source, ElapsedEventArgs e)
         {
             //Console.WriteLine(yapayZeka.kelimeSun(this.SozcukHaznem)[sayac]);
@@ -64,10 +69,13 @@ namespace Huntertheword
         }
 
         public void Bitir()
+        {          
+            Console.WriteLine("oyun bitti");
+        }
+        public void kaydediciBilgiGönder(string oyuncuİsmi, string zorluk)
         {
             Kaydedici kayit = new Kaydedici();
-            kayit.dosyayaYaz(50, 60);// kaydediciye skor ve süre gidecek
-            Console.WriteLine("oyun bitti");
+            kayit.dosyayaYaz(oyuncuİsmi,zorluk,50, 60);// kaydediciye skor ve süre gidecek
         }
 
         public HunterTheWord GetirForm()
