@@ -80,7 +80,7 @@ namespace Huntertheword
 
         public HunterTheWord GetirForm()
         {
-            HunterForm.AISozcukKriteri1 = SozcukHaznem;
+            HunterForm.AIyeSozcukTurunuGonderici_ = SozcukHaznem;
             HunterForm.sureGonder(sw.Elapsed.Seconds);
             return HunterForm;
         }

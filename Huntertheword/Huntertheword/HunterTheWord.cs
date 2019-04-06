@@ -17,7 +17,7 @@ namespace Huntertheword
         private Sozcuk AIyeSozcukTurunuGonderici;
 
         public Label LabelDeneme { get => labelDeneme; set => labelDeneme = value; }
-        public Sozcuk AISozcukKriteri { get => AIyeSozcukTurunuGonderici; set => AIyeSozcukTurunuGonderici = value; }
+        public Sozcuk AIyeSozcukTurunuGonderici_ { get => AIyeSozcukTurunuGonderici; set => AIyeSozcukTurunuGonderici = value; }
 
         public HunterTheWord()
         {
@@ -31,7 +31,7 @@ namespace Huntertheword
              * burdaki 3 şu anki tahminin olması gereken uzunluk bunu bir sayaç yardımıyla ilerletmemiz lazım
              * şimdilik 3 olarak yazdım.
              */
-            girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, 3, this.AISozcukKriteri);
+            girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, 3, this.AIyeSozcukTurunuGonderici_);
             Console.WriteLine("girdi: " + girdiDogruMu);
             TepkiVer();
         }
