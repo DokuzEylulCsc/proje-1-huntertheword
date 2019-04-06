@@ -13,6 +13,11 @@ namespace Huntertheword
     public partial class HunterTheWord : Form
     {
         private bool girdiDogruMu;
+        private Label labelDeneme = new Label();
+        private Sozcuk AIyeSozcukTurunuGonderici;
+
+        public Label LabelDeneme { get => labelDeneme; set => labelDeneme = value; }
+        public Sozcuk AISozcukKriteri { get => AIyeSozcukTurunuGonderici; set => AIyeSozcukTurunuGonderici = value; }
 
         public HunterTheWord()
         {
@@ -26,7 +31,7 @@ namespace Huntertheword
              * burdaki 3 şu anki tahminin olması gereken uzunluk bunu bir sayaç yardımıyla ilerletmemiz lazım
              * şimdilik 3 olarak yazdım.
              */
-            girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, 3);
+            girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, 3, this.AISozcukKriteri);
             Console.WriteLine("girdi: " + girdiDogruMu);
             TepkiVer();
         }

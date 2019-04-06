@@ -13,16 +13,16 @@ namespace Huntertheword
     public static class Oyuncu
     {
 
-        private static void TahminiYapayZekayaGonder(string kullaniciTahmini)
+        private static void TahminiYapayZekayaGonder(string kullaniciTahmini, Sozcuk sozcuk)
         {
-            AI.TahmineCevapVer(kullaniciTahmini);
+            AI.TahmineCevapVer(kullaniciTahmini, sozcuk);
         }
 
-        public static bool KullanicidanGirdiAl(string kullaniciTahmini, int tahminUzunlugu)
+        public static bool KullanicidanGirdiAl(string kullaniciTahmini, int tahminUzunlugu, Sozcuk sozcuk)
         {
-            if (Tahmin.girdiDogruMu(kullaniciTahmini, tahminUzunlugu))
+            if (Tahmin.girdiDogruMu(kullaniciTahmini, tahminUzunlugu)) // kelime uzunlugu dogru mu sorgusu
             {
-                TahminiYapayZekayaGonder(kullaniciTahmini);
+                TahminiYapayZekayaGonder(kullaniciTahmini, sozcuk);
                 return true;
             }
             else

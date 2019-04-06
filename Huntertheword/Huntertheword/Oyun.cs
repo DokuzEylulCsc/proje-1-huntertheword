@@ -25,11 +25,11 @@ namespace Huntertheword
         public Oyun(string zorluk)
         {
             if (zorluk == "kolay")
-                this.SozcukHaznem = new KolaySozcuk();
+                SozcukHaznem = new KolaySozcuk();
             else if (zorluk == "orta")
-                this.SozcukHaznem = new OrtaSozcuk();
+                SozcukHaznem = new OrtaSozcuk();
             else if (zorluk == "zor")
-                this.SozcukHaznem = new ZorSozcuk();
+                SozcukHaznem = new ZorSozcuk();
         }
 
         public void Baslat()
@@ -50,6 +50,7 @@ namespace Huntertheword
         {
             //Console.WriteLine(yapayZeka.kelimeSun(this.SozcukHaznem)[sayac]);
             //sayac++;
+
             if (sw.Elapsed.Seconds < oyunSuresi)
                 Console.WriteLine(sw.Elapsed.Seconds);
 
@@ -58,6 +59,8 @@ namespace Huntertheword
                 sw.Stop();
                 this.Bitir();
             }
+
+            
         }
 
         public void Bitir()
@@ -69,7 +72,8 @@ namespace Huntertheword
 
         public HunterTheWord GetirForm()
         {
-            hunterForm.sureGonder(sw.Elapsed.Seconds);
+            HunterForm.AISozcukKriteri1 = SozcukHaznem;
+            HunterForm.sureGonder(sw.Elapsed.Seconds);
             return HunterForm;
         }
     }

@@ -10,15 +10,20 @@ namespace Huntertheword
     public static class AI
     {
 
-
         public static string[] kelimeSun(Sozcuk sozcuk)
         {
             return sozcuk.kelimeGetir();
         }
 
-        public static void TahmineCevapVer(string kullaniciTahmini)
+        public static void TahmineCevapVer(string kullaniciTahmini, Sozcuk sozcuk)
         {
+            foreach ( var element in kelimeSun(sozcuk))
+            {
+                Console.WriteLine(element);
+            }
 
+            //if(kullaniciTahmini == AI'in tuttugu)
+            //        Console.WriteLine("bildin");
         }
     }
 }
