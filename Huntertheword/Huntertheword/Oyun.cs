@@ -1,49 +1,64 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Timers;
 
 namespace Huntertheword
 {
     public class Oyun
     {
+        private static System.Timers.Timer myTimer;
+        private static Stopwatch sw = new Stopwatch();
         private Sozcuk sozcukhaznem;
-        /*
-         *oyun suresi simdilik 60 sn 
-         * AYŞE=> timerı forma aldım. Buraya 1 adet static metod ekledim. süre dolduğunda bu metodu çağırıyorum.
-         * 
-        */
-        private int oyunSuresi;
+        private int oyunSuresi = 60; // oyun suresi simdilik 60 sn
+        //private static int sayac = 0;
 
-        private HunterTheWord hunterForm; // Form
+        private static HunterTheWord hunterForm = new HunterTheWord(); // Form
 
         public Sozcuk SozcukHaznem { get => sozcukhaznem; set => sozcukhaznem = value; }
-        public int OyunSuresi { get => oyunSuresi; set => oyunSuresi = value; }
+        public static HunterTheWord HunterForm { get => hunterForm; set => hunterForm = value; }
 
         //Oyun sınıfı ise oyunu başlatma ve bitirme görevlerini yerine getirecektir.
-        public Oyun(int zorluk)
+        public Oyun(string zorluk)
         {
-            if (zorluk == 1)
+            if (zorluk == "kolay")
                 this.SozcukHaznem = new KolaySozcuk();
-            else if (zorluk == 2)
+            else if (zorluk == "orta")
                 this.SozcukHaznem = new OrtaSozcuk();
-            else if (zorluk == 3)
+            else if (zorluk == "zor")
                 this.SozcukHaznem = new ZorSozcuk();
-            hunterForm = new HunterTheWord(this);
-            /*
-            oyun formuna Oyun nesnesinin referansını gönderiyoruz. bu şekilde oyun ekranından
-            oyun nesnesine erişebiliyoruz.
-            */
-            Baslat();
         }
 
-        private void Baslat()
+        public void Baslat()
         {
-            hunterForm.Show();
+            Console.WriteLine("oyun basladi");
+
+            sw.Start(); // stopwatch basladi
+
+            myTimer = new System.Timers.Timer(2000); // 5 dakika oyun süresi 5 * 60 * birSaniye
+            if (sw.Elapsed.Seconds < oyunSuresi)
+                myTimer.Elapsed += OyunDongusu;
+            myTimer.AutoReset = true;
+            myTimer.Enabled = true;
+
         }
 
-        public void sureBitti()
+        private void OyunDongusu(Object source, ElapsedEventArgs e)
         {
-            //bu metodu süre bittiğinde çağrıyorum. gereksiz görünürse bu metod silinebilir.
-        }
+            //Console.WriteLine(yapayZeka.kelimeSun(this.SozcukHaznem)[sayac]);
+            //sayac++;
+            if (sw.Elapsed.Seconds < oyunSuresi)
+                Console.WriteLine(sw.Elapsed.Seconds);
 
+            if (sw.Elapsed.Seconds >= oyunSuresi)
+            {
+                sw.Stop();
+                this.Bitir();
+            }
+        }
 
         public void Bitir()
         {
@@ -52,5 +67,10 @@ namespace Huntertheword
             Console.WriteLine("oyun bitti");
         }
 
+        public HunterTheWord GetirForm()
+        {
+            hunterForm.sureGonder(sw.Elapsed.Seconds);
+            return HunterForm;
+        }
     }
 }

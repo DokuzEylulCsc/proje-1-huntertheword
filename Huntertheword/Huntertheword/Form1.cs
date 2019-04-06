@@ -18,20 +18,26 @@ namespace Huntertheword
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+        private void derecelerButton_Click(object sender, EventArgs e)
+        {
+            Dereceler basarilar = new Dereceler();
+            basarilar.ShowDialog();
+        }
 
         private void Baslat_Click(object sender, EventArgs e)
         {
             HunterTheWord oyunForm = new HunterTheWord();
-
+            oyunForm.Show();
             // radio butonunda seçilen zorluk derecesine göre sozcuk clasına zorluk derecesini yönlendirdim.
-            if (KolayButton.Checked == true)
-            {
+           // if (KolayButton.Checked == true)
+            //{
                 //Oyun oyun1 = new Oyun();
                 //oyun1.Sozcugum = new KolaySozcuk();
 
@@ -40,18 +46,18 @@ namespace Huntertheword
                 //oyun1.Baslat(deneme2);
                 //kolay.KelimeZorlukSecimi("kolay);
 
-                oyunForm.Show();
+           //     oyunForm.Show();
 
-            }
-            else if (OrtaButton.Checked == true)
-            {
+            //}
+            //else if (OrtaButton.Checked == true)
+            //{
                 //Oyun ortaOyun = new Oyun();
-                oyunForm.Show();
-            }
-            else
-            {
-                oyunForm.Show();
-            }
+                //oyunForm.Show();
+            //}
+            //else
+            //{
+             //   oyunForm.Show();
+           // }
         }
 
         private void bilgiButonu_Click(object sender, EventArgs e)
@@ -59,12 +65,6 @@ namespace Huntertheword
             MessageBox.Show("Oyun 3 derece zorluktan oluşur." +
                 "Her oyun için 10 kelime önünüze çıkacak ve her kelime için 10 hakkınız olacak." +
                 "Her doğru cevabınızda 10 puan kazanacaksınız.");
-        }
-
-        private void derecelerButton_Click(object sender, EventArgs e)
-        {
-            Dereceler basarilar = new Dereceler();
-            basarilar.ShowDialog();
         }
     }
 }

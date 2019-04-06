@@ -85,7 +85,6 @@
             this.kolayBtn.TabIndex = 9;
             this.kolayBtn.Text = "Kolay";
             this.kolayBtn.UseVisualStyleBackColor = true;
-            this.kolayBtn.Click += new System.EventHandler(this.kolayBtn_Click);
             // 
             // ortaBtn
             // 
@@ -98,7 +97,6 @@
             this.ortaBtn.TabIndex = 10;
             this.ortaBtn.Text = "Orta";
             this.ortaBtn.UseVisualStyleBackColor = true;
-            this.ortaBtn.Click += new System.EventHandler(this.ortaBtn_Click);
             // 
             // zorBtn
             // 
@@ -111,7 +109,6 @@
             this.zorBtn.TabIndex = 11;
             this.zorBtn.Text = "Zor";
             this.zorBtn.UseVisualStyleBackColor = true;
-            this.zorBtn.Click += new System.EventHandler(this.zorBtn_Click);
             // 
             // Form1
             // 
@@ -143,4 +140,3 @@
         private System.Windows.Forms.Button zorBtn;
     }
 }
-

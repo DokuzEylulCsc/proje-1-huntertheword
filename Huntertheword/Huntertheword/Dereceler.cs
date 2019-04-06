@@ -16,7 +16,7 @@ namespace Huntertheword
         {
             InitializeComponent();
         }
-       
+
         private void buton_cikis_Click(object sender, EventArgs e)
         {
             this.Close();
