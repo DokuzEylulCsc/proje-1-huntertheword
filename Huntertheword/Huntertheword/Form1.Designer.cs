@@ -41,10 +41,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(480, 292);
+            this.pictureBox1.Size = new System.Drawing.Size(640, 359);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -52,10 +52,10 @@
             // 
             this.bilgiButonu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bilgiButonu.ForeColor = System.Drawing.Color.Coral;
-            this.bilgiButonu.Location = new System.Drawing.Point(9, 345);
-            this.bilgiButonu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bilgiButonu.Location = new System.Drawing.Point(12, 425);
+            this.bilgiButonu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bilgiButonu.Name = "bilgiButonu";
-            this.bilgiButonu.Size = new System.Drawing.Size(82, 79);
+            this.bilgiButonu.Size = new System.Drawing.Size(109, 97);
             this.bilgiButonu.TabIndex = 7;
             this.bilgiButonu.Text = "Bilgi";
             this.bilgiButonu.UseVisualStyleBackColor = true;
@@ -65,22 +65,23 @@
             // 
             this.derecelerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.derecelerButton.ForeColor = System.Drawing.Color.Coral;
-            this.derecelerButton.Location = new System.Drawing.Point(392, 345);
-            this.derecelerButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.derecelerButton.Location = new System.Drawing.Point(523, 425);
+            this.derecelerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.derecelerButton.Name = "derecelerButton";
-            this.derecelerButton.Size = new System.Drawing.Size(87, 79);
+            this.derecelerButton.Size = new System.Drawing.Size(116, 97);
             this.derecelerButton.TabIndex = 8;
             this.derecelerButton.Text = "Dereceler";
             this.derecelerButton.UseVisualStyleBackColor = true;
+            this.derecelerButton.Click += new System.EventHandler(this.derecelerButton_Click);
             // 
             // kolayBtn
             // 
             this.kolayBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kolayBtn.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.kolayBtn.Location = new System.Drawing.Point(105, 345);
-            this.kolayBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.kolayBtn.Location = new System.Drawing.Point(140, 425);
+            this.kolayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kolayBtn.Name = "kolayBtn";
-            this.kolayBtn.Size = new System.Drawing.Size(65, 65);
+            this.kolayBtn.Size = new System.Drawing.Size(87, 80);
             this.kolayBtn.TabIndex = 9;
             this.kolayBtn.Text = "Kolay";
             this.kolayBtn.UseVisualStyleBackColor = true;
@@ -90,10 +91,10 @@
             // 
             this.ortaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ortaBtn.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.ortaBtn.Location = new System.Drawing.Point(202, 345);
-            this.ortaBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.ortaBtn.Location = new System.Drawing.Point(269, 425);
+            this.ortaBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ortaBtn.Name = "ortaBtn";
-            this.ortaBtn.Size = new System.Drawing.Size(65, 65);
+            this.ortaBtn.Size = new System.Drawing.Size(87, 80);
             this.ortaBtn.TabIndex = 10;
             this.ortaBtn.Text = "Orta";
             this.ortaBtn.UseVisualStyleBackColor = true;
@@ -103,10 +104,10 @@
             // 
             this.zorBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.zorBtn.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.zorBtn.Location = new System.Drawing.Point(299, 345);
-            this.zorBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.zorBtn.Location = new System.Drawing.Point(399, 425);
+            this.zorBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.zorBtn.Name = "zorBtn";
-            this.zorBtn.Size = new System.Drawing.Size(65, 65);
+            this.zorBtn.Size = new System.Drawing.Size(87, 80);
             this.zorBtn.TabIndex = 11;
             this.zorBtn.Text = "Zor";
             this.zorBtn.UseVisualStyleBackColor = true;
@@ -114,15 +115,16 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 450);
+            this.ClientSize = new System.Drawing.Size(653, 554);
             this.Controls.Add(this.zorBtn);
             this.Controls.Add(this.ortaBtn);
             this.Controls.Add(this.kolayBtn);
             this.Controls.Add(this.derecelerButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bilgiButonu);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

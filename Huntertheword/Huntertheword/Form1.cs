@@ -26,7 +26,6 @@ namespace Huntertheword
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
-
         }
               
 
@@ -57,6 +56,12 @@ namespace Huntertheword
         {
             oyun = new Oyun(1);
             oyun.OyunSuresi = sure;
+        }
+
+        private void derecelerButton_Click(object sender, EventArgs e)
+        {
+            Dereceler basarilar = new Dereceler();
+            basarilar.ShowDialog();
         }
     }
 }

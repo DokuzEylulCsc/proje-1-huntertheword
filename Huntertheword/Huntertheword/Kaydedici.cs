@@ -9,18 +9,28 @@ namespace Huntertheword
     //Kaydedici sınıfı ise log ve istatistiklerden sorumlu olacaktır.
     class Kaydedici
     {
-        private static void dosyayaYaz()
+        public void dosyayaYaz(int skor = 50, int sure = 60)
         {
-            string dosya_yolu = @"C:\Dereceler.txt";
-           
-            FileStream fs = new FileStream(dosya_yolu, FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
 
+            string dosya_yolu = @"Dereceler.txt";
+            StreamWriter swrite = new StreamWriter(dosya_yolu, true);
+            swrite.WriteLine($"Skor:{skor}     Süre: {sure} ");
+            swrite.Close();
+        }
+        public string dosyaOku()
+        {
+            string veriler = string.Empty;
+            try
+            {
+                veriler = File.ReadAllText("Dereceler.txt");
+            }
+            catch (Exception exp)
+            {
 
-
-            sw.Flush();           
-            sw.Close();
-            fs.Close();
+                StreamWriter hata = new StreamWriter("Hatalar.txt", true);
+                hata.WriteLine(exp.Message);
+            }
+            return veriler;
         }
     }
 }

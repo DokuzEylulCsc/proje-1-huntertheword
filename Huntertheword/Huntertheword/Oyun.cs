@@ -47,6 +47,8 @@ namespace Huntertheword
 
         public void Bitir()
         {
+            Kaydedici kayit = new Kaydedici();
+            kayit.dosyayaYaz(50, 60);// kaydediciye skor ve süre gidecek
             Console.WriteLine("oyun bitti");
         }
 

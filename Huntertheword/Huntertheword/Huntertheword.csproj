@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.cs" />
+    <Compile Include="Dereceler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dereceler.Designer.cs">
+      <DependentUpon>Dereceler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="Tahmin.cs" />
     <Compile Include="Tur.cs" />
     <Compile Include="ZorSozcuk.cs" />
+    <EmbeddedResource Include="Dereceler.resx">
+      <DependentUpon>Dereceler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
