@@ -12,50 +12,53 @@ namespace Huntertheword
 {
     public partial class Form1 : Form
     {
-        /*
-         * aşağıdaki kurallar değiştirilebilir
-         * 
-         kolay = 1 => süresi: 6dk
-         orta = 2 => süresi: 5dk
-         zor = 3 => süresi: 4dk
-             */
-
-        private Oyun oyun;
+        // Yeniden yazilacak
 
         public Form1()
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeComponent();
         }
-              
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Baslat_Click(object sender, EventArgs e)
+        {
+            HunterTheWord oyunForm = new HunterTheWord();
+
+            // radio butonunda seçilen zorluk derecesine göre sozcuk clasına zorluk derecesini yönlendirdim.
+            if (KolayButton.Checked == true)
+            {
+                //Oyun oyun1 = new Oyun();
+                //oyun1.Sozcugum = new KolaySozcuk();
+
+                //oyunForm.kelimeleriGoster(oyun1.Sozcugum.getir());
+
+                //oyun1.Baslat(deneme2);
+                //kolay.KelimeZorlukSecimi("kolay);
+
+                oyunForm.Show();
+
+            }
+            else if (OrtaButton.Checked == true)
+            {
+                //Oyun ortaOyun = new Oyun();
+                oyunForm.Show();
+            }
+            else
+            {
+                oyunForm.Show();
+            }
+        }
 
         private void bilgiButonu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Oyun 3 derece zorluktan oluşur." +
                 "Her oyun için 10 kelime önünüze çıkacak ve her kelime için 10 hakkınız olacak." +
                 "Her doğru cevabınızda 10 puan kazanacaksınız.");
-        }
-
-        private void kolayBtn_Click(object sender, EventArgs e)
-        {
-            oyunOlustur(1, 360);
-        }
-
-        private void ortaBtn_Click(object sender, EventArgs e)
-        {
-            oyunOlustur(2, 300);
-        }
-
-        private void zorBtn_Click(object sender, EventArgs e)
-        {
-            oyunOlustur(3,240);
-        }
-
-        //bu metod verilen zorluğa ve süreye göre yeni oyun oluşturuyor.
-        private void oyunOlustur(int zorluk,int sure)
-        {
-            oyun = new Oyun(1);
-            oyun.OyunSuresi = sure;
         }
 
         private void derecelerButton_Click(object sender, EventArgs e)
