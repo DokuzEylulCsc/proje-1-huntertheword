@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace Huntertheword
@@ -38,7 +34,7 @@ namespace Huntertheword
 
             sw.Start(); // stopwatch basladi
 
-            myTimer = new System.Timers.Timer(2000); // 5 dakika oyun süresi 5 * 60 * birSaniye
+            myTimer = new Timer(2000); // 5 dakika oyun süresi 5 * 60 * birSaniye
             if (sw.Elapsed.Seconds < oyunSuresi)
                 myTimer.Elapsed += OyunDongusu;
             myTimer.AutoReset = true;
@@ -57,7 +53,11 @@ namespace Huntertheword
             //sayac++;
 
             if (sw.Elapsed.Seconds < oyunSuresi)
+            {
                 Console.WriteLine(sw.Elapsed.Seconds);
+                oyunSuresi--;
+                hunterForm.sureAl(oyunSuresi);
+            }
 
             if (sw.Elapsed.Seconds >= oyunSuresi)
             {
@@ -65,23 +65,23 @@ namespace Huntertheword
                 this.Bitir();
             }
 
-            
+
         }
 
         public void Bitir()
-        {          
+        {
             Console.WriteLine("oyun bitti");
         }
         public void kaydediciBilgiGönder(string oyuncuİsmi, string zorluk)
         {
             Kaydedici kayit = new Kaydedici();
-            kayit.dosyayaYaz(oyuncuİsmi,zorluk,50, 60);// kaydediciye skor ve süre gidecek
+            kayit.dosyayaYaz(oyuncuİsmi, zorluk, 50, 60);// kaydediciye skor ve süre gidecek
         }
 
         public HunterTheWord GetirForm()
         {
             HunterForm.AIyeSozcukTurunuGonderici_ = SozcukHaznem;
-            HunterForm.sureGonder(sw.Elapsed.Seconds);
+            HunterForm.sureAl(sw.Elapsed.Seconds);
             return HunterForm;
         }
     }

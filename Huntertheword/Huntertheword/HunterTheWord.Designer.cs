@@ -1,4 +1,6 @@
-﻿namespace Huntertheword
+﻿using System.Windows.Forms;
+
+namespace Huntertheword
 {
     partial class HunterTheWord
     {
@@ -130,5 +132,6 @@
         private System.Windows.Forms.TextBox kelimeGirisi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label sureLabel;
+
     }
 }
