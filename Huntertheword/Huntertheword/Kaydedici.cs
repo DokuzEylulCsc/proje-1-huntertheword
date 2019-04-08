@@ -14,7 +14,7 @@ namespace Huntertheword
 
             string dosya_yolu = @"Dereceler.txt";
             StreamWriter swrite = new StreamWriter(dosya_yolu, true);
-            swrite.WriteLine($"Oyuncu:{oyuncuİsim}  Skor:{skor}        Süre: {sure}     Zorluk:{oyunZorluk} ");
+            swrite.WriteLine($"Oyuncu:{oyuncuİsim}  Skor:{skor}       Kalan Süre: {sure}     Zorluk:{oyunZorluk} ");
             swrite.Close();
         }
         public string dosyaOku()

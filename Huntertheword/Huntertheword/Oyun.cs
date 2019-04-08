@@ -12,7 +12,7 @@ namespace Huntertheword
         private int oyunSuresi = 0; // 5dk oyun süresi + 1 => formda 300 gozukmesi icin
         private static HunterTheWord hunterForm = new HunterTheWord(); // Form
         private static int puan = 0;
-
+        private Form1 ac;
         public Sozcuk SozcukHaznem { get => sozcukhaznem; set => sozcukhaznem = value; }
         public static HunterTheWord HunterForm { get => hunterForm; set => hunterForm = value; }
         public int OyunSuresi { get => oyunSuresi; set => oyunSuresi = value; }
@@ -25,7 +25,7 @@ namespace Huntertheword
             if (zorluk == "kolay")
             {
                 SozcukHaznem = new KolaySozcuk();
-                OyunSuresi = 241; // 4dk + 1sn
+                OyunSuresi = 5; // 4dk + 1sn
             }
             else if (zorluk == "orta")
             {
@@ -76,17 +76,19 @@ namespace Huntertheword
             if (OyunSuresi <= 0)
             {
                 myTimer.Stop();
+                
             }
         }
 
         public void Bitir()
         {
             Console.WriteLine("oyun bitti");//Silinecek form MessageBox ile cikti eklenecek
+
         }
         public void kaydediciBilgiGönder(string oyuncuİsmi, string zorluk)
         {
             Kaydedici kayit = new Kaydedici();
-            kayit.dosyayaYaz(oyuncuİsmi, zorluk, 50, 60);// kaydediciye skor ve süre gidecek
+            kayit.dosyayaYaz(oyuncuİsmi, zorluk,puan,OyunSuresi);// kaydediciye skor ve süre gidecek
         }
 
         public HunterTheWord GetirForm()
