@@ -24,6 +24,7 @@ namespace Huntertheword
         public HunterTheWord()
         {
             InitializeComponent();
+            SkorSayı.Text = Oyun.Puan.ToString() ;
         }
 
 
@@ -42,6 +43,8 @@ namespace Huntertheword
             if (AI.DogruCevapSorgusu == true)
             {
                 MessageBox.Show("Bildin!");
+                Oyun.Puan += 10;
+                SkorSayı.Text = Oyun.Puan.ToString();
             }
             else if (AI.DogruCevapSorgusu == false)
                 MessageBox.Show("Bilemedin, tekrar dene");
