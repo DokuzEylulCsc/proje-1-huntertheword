@@ -82,6 +82,12 @@ namespace Huntertheword
                 sureLabel.Text = sure.ToString();
             }
 
+            if (Oyun.OyunSuresi == 0)
+            {
+                MessageBox.Show("Oyunun süresi Bitti");
+                Application.Exit();
+            }
         }
+
     }
 }
