@@ -43,7 +43,7 @@ namespace Huntertheword
             Console.WriteLine("oyun basladi");//Silinecek
 
             sw.Start(); // stopwatch basladi
-
+            
             myTimer = new Timer(1000);
             if (sw.Elapsed.Seconds < OyunSuresi)
                 myTimer.Elapsed += OyunDongusu;

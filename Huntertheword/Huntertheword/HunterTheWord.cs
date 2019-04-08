@@ -24,7 +24,7 @@ namespace Huntertheword
         public HunterTheWord()
         {
             InitializeComponent();
-            SkorSayı.Text = Oyun.Puan.ToString() ;
+            SkorSayı.Text = Oyun.Puan.ToString();
         }
 
 
@@ -47,7 +47,15 @@ namespace Huntertheword
                 SkorSayı.Text = Oyun.Puan.ToString();
             }
             else if (AI.DogruCevapSorgusu == false)
-                MessageBox.Show("Bilemedin, tekrar dene");
+            {
+                if (AI.Tutulanlar.Length != 0)
+                {
+                    string toDisplay = string.Join(",", AI.Tutulanlar);
+                    MessageBox.Show("Bilemedin. Tutturduğun harfler: " + toDisplay);
+                }
+                else
+                    MessageBox.Show("Eşleşen harf yok, tekrar dene!");
+            }
 
             if (AI.KelimeSayaci == 10)
             {

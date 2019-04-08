@@ -21,7 +21,7 @@ namespace Huntertheword
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1()); // ilk ekran, oyun zorluk secimi simdilik asagidaki sekilde secilsin
 
-            Oyun oyun1 = new Oyun("zor");
+            Oyun oyun1 = new Oyun("kolay");
             oyun1.Baslat();
             Application.Run(oyun1.GetirForm());
         }

@@ -12,10 +12,12 @@ namespace Huntertheword
         private static int kelimeSayaci = -1;
         private static string[] rastgele = new string[10];
         private static bool dogruCevapSorgusu = false;
+        private static char[] tutulanlar;
 
         public static int KelimeSayaci { get => kelimeSayaci; set => kelimeSayaci = value; }
         public static string[] Rastgele { get => rastgele; set => rastgele = value; }
         public static bool DogruCevapSorgusu { get => dogruCevapSorgusu; set => dogruCevapSorgusu = value; }
+        public static char[] Tutulanlar { get => tutulanlar; set => tutulanlar = value; }
 
         public static string[] kelimeSun(Sozcuk sozcuk)
         {
@@ -41,6 +43,12 @@ namespace Huntertheword
                 }
                 else
                 {
+                    var tutulanKelime = Rastgele[KelimeSayaci].ToCharArray();
+                    var tahminEdilenKelime = kullaniciTahmini.ToCharArray();
+
+                    var ortakHarfler = tutulanKelime.Intersect(tahminEdilenKelime);
+                    Tutulanlar = ortakHarfler.ToArray();
+
                     Console.WriteLine("bilemedin kelime şuydu: " + Rastgele[KelimeSayaci] + " tahminin: " + kullaniciTahmini);
                     DogruCevapSorgusu = false;
                 }
@@ -49,15 +57,5 @@ namespace Huntertheword
                 Console.WriteLine("hepsini bildin");
 
         }
-
-        //public static bool DogruCevap()
-        //{
-        //    return true;
-        //}
-
-        //public static bool YanlisCevap()
-        //{
-        //    return false;
-        //}
     }
 }
