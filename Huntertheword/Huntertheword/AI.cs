@@ -11,9 +11,11 @@ namespace Huntertheword
     {
         private static int kelimeSayaci = -1;
         private static string[] rastgele = new string[10];
+        private static bool dogruCevapSorgusu = false;
 
         public static int KelimeSayaci { get => kelimeSayaci; set => kelimeSayaci = value; }
         public static string[] Rastgele { get => rastgele; set => rastgele = value; }
+        public static bool DogruCevapSorgusu { get => dogruCevapSorgusu; set => dogruCevapSorgusu = value; }
 
         public static string[] kelimeSun(Sozcuk sozcuk)
         {
@@ -23,7 +25,7 @@ namespace Huntertheword
         public static void TahmineCevapVer(string kullaniciTahmini, Sozcuk sozcuk)
         {
             if (KelimeSayaci == -1) // kelimesayaci = -1 => yani bir kez rastgele alsin, aksi halde o kelimeleri kullansin.
-            {                               
+            {
                 Rastgele = kelimeSun(sozcuk);
                 Rastgele = Rastgele.OrderBy(eleman => eleman.Length).ToArray(); // kelimeler uzunluguna gore sirali gelsin.
                 KelimeSayaci++;
@@ -35,14 +37,27 @@ namespace Huntertheword
                 {
                     Console.WriteLine("bildin kelime şuydu: " + Rastgele[KelimeSayaci]);
                     KelimeSayaci++;
+                    DogruCevapSorgusu = true;
                 }
                 else
                 {
                     Console.WriteLine("bilemedin kelime şuydu: " + Rastgele[KelimeSayaci] + " tahminin: " + kullaniciTahmini);
+                    DogruCevapSorgusu = false;
                 }
             }
             else if (KelimeSayaci == 10)
                 Console.WriteLine("hepsini bildin");
+
         }
+
+        //public static bool DogruCevap()
+        //{
+        //    return true;
+        //}
+
+        //public static bool YanlisCevap()
+        //{
+        //    return false;
+        //}
     }
 }

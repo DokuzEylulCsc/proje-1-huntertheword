@@ -29,21 +29,27 @@ namespace Huntertheword
 
         private void kontrolEt_Click(object sender, EventArgs e)
         {
-            /*
-             * burdaki 3 şu anki tahminin olması gereken uzunluk bunu bir sayaç yardımıyla ilerletmemiz lazım
-             * şimdilik 3 olarak yazdım.
-             */
-            girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, 3, this.AIyeSozcukTurunuGonderici_);
-            Console.WriteLine("girdi: " + girdiDogruMu);
-            TepkiVer();
+            girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, AIyeSozcukTurunuGonderici_);
+
+            if (girdiDogruMu == true)
+                TepkiVer();
+            else
+                MessageBox.Show("Hatalı Giriş!");
         }
 
         private void TepkiVer()
         {
-            /*
-             * girdi kontrolü yapıldıktan sonra kullanıcıya görsel olarak tepki verilmesi gerekiyor. 
-             * Bu metodu temp olarak açtım değiştirilebilir.
-             */
+            if (AI.DogruCevapSorgusu == true)
+            {
+                MessageBox.Show("Bildin!");
+            }
+            else if (AI.DogruCevapSorgusu == false)
+                MessageBox.Show("Bilemedin, tekrar dene");
+
+            if (AI.KelimeSayaci == 10)
+            {
+                MessageBox.Show("Tüm kelimeleri bildin, tebrikler!");
+            }
         }
         public void sureAl(int sure)
         {
@@ -55,7 +61,7 @@ namespace Huntertheword
             //https://social.msdn.microsoft.com/Forums/vstudio/en-US/a83a8655-76b8-4225-b38d-3b33eb67aafc/c-threading-changing-label?forum=csharpgeneral
             if (sureLabel.InvokeRequired)
             {
-                sureLabel.Invoke((MethodInvoker)delegate() { sureLabel.Text = sure.ToString(); });
+                sureLabel.Invoke((MethodInvoker)delegate () { sureLabel.Text = sure.ToString(); });
             }
             else
             {

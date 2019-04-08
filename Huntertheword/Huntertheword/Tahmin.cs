@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Huntertheword
 {
-    static class Tahmin // interface kullanilabilir
+    public static class Tahmin
     {
-
         public static bool girdiDogruMu(string kullaniciTahmin, int tahminUzunluk) // exc handling eklenecek
         {
             if (kullaniciTahmin.Length == 0 || kullaniciTahmin.Length != tahminUzunluk)

@@ -18,7 +18,7 @@ namespace Huntertheword
             AI.TahmineCevapVer(kullaniciTahmini, sozcuk);
         }
 
-        public static bool KullanicidanGirdiAl(string kullaniciTahmini, int tahminUzunlugu, Sozcuk sozcuk) // girdi kontrolu
+        public static bool KullanicidanGirdiAl(string kullaniciTahmini, Sozcuk sozcuk) // girdi kontrolu
         {
             TahminiYapayZekayaGonder(kullaniciTahmini, sozcuk);
 
