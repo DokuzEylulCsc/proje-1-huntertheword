@@ -9,8 +9,7 @@ namespace Huntertheword
         private static System.Timers.Timer myTimer;
         private static Stopwatch sw = new Stopwatch();
         private Sozcuk sozcukhaznem;
-        private int oyunSuresi = 60; // oyun suresi simdilik 60 sn
-        //private static int sayac = 0;
+        private int oyunSuresi = 301; // 5dk oyun süresi + 1 => formda 300 gozukmesi icin
 
         private static HunterTheWord hunterForm = new HunterTheWord(); // Form
 
@@ -30,11 +29,11 @@ namespace Huntertheword
 
         public void Baslat()
         {
-            Console.WriteLine("oyun basladi");
+            Console.WriteLine("oyun basladi");//Silinecek
 
             sw.Start(); // stopwatch basladi
 
-            myTimer = new Timer(2000); // 5 dakika oyun süresi 5 * 60 * birSaniye
+            myTimer = new Timer(1000);
             if (sw.Elapsed.Seconds < oyunSuresi)
                 myTimer.Elapsed += OyunDongusu;
             myTimer.AutoReset = true;
@@ -49,14 +48,10 @@ namespace Huntertheword
 
         private void OyunDongusu(Object source, ElapsedEventArgs e)
         {
-            //Console.WriteLine(yapayZeka.kelimeSun(this.SozcukHaznem)[sayac]);
-            //sayac++;
-
             if (sw.Elapsed.Seconds < oyunSuresi)
             {
+                hunterForm.sureAl(oyunSuresi - sw.Elapsed.Seconds);
                 Console.WriteLine(sw.Elapsed.Seconds);
-                oyunSuresi--;
-                hunterForm.sureAl(oyunSuresi);
             }
 
             if (sw.Elapsed.Seconds >= oyunSuresi)
@@ -64,13 +59,11 @@ namespace Huntertheword
                 sw.Stop();
                 this.Bitir();
             }
-
-
         }
 
         public void Bitir()
         {
-            Console.WriteLine("oyun bitti");
+            Console.WriteLine("oyun bitti");//Silinecek form MessageBox ile cikti eklenecek
         }
         public void kaydediciBilgiGönder(string oyuncuİsmi, string zorluk)
         {

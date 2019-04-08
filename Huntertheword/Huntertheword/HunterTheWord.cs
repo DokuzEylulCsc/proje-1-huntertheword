@@ -48,7 +48,7 @@ namespace Huntertheword
         public void sureAl(int sure)
         {
             //sureLabel.Text = sure.ToString();
-            Console.WriteLine("sure gönder metodu");
+            //sure gönder metodu
 
             //hunterFrom başa bir threadte çalıştığı için invoke metodu ile labelımızı başka threadlerden 
             //editlenebilir yapıyoruz. çözüme ulaştığım kaynak:

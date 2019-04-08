@@ -61,7 +61,7 @@ namespace Huntertheword
                 "çiçek",
                 "deniz",
                 "tatil",//6 tane 5 harfli
-            };
+        };
 
         public override string[] kelimeGetir()
         {

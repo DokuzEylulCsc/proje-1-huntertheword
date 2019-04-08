@@ -18,18 +18,13 @@ namespace Huntertheword
             AI.TahmineCevapVer(kullaniciTahmini, sozcuk);
         }
 
-        public static bool KullanicidanGirdiAl(string kullaniciTahmini, int tahminUzunlugu, Sozcuk sozcuk)
+        public static bool KullanicidanGirdiAl(string kullaniciTahmini, int tahminUzunlugu, Sozcuk sozcuk) // girdi kontrolu
         {
-            if (Tahmin.girdiDogruMu(kullaniciTahmini, tahminUzunlugu)) // kelime uzunlugu dogru mu sorgusu
-            {
-                TahminiYapayZekayaGonder(kullaniciTahmini, sozcuk);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            TahminiYapayZekayaGonder(kullaniciTahmini, sozcuk);
 
+            if (kullaniciTahmini == "")
+                return false;
+            else return true;
         }
     }
 }
