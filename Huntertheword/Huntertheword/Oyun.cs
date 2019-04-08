@@ -6,7 +6,7 @@ namespace Huntertheword
 {
     public class Oyun
     {
-        private static System.Timers.Timer myTimer;
+        private static Timer myTimer;
         private static Stopwatch sw = new Stopwatch();
         private Sozcuk sozcukhaznem;
         private int oyunSuresi = 0; // 5dk oyun süresi + 1 => formda 300 gozukmesi icin
@@ -17,6 +17,7 @@ namespace Huntertheword
         public static HunterTheWord HunterForm { get => hunterForm; set => hunterForm = value; }
         public int OyunSuresi { get => oyunSuresi; set => oyunSuresi = value; }
         public static int Puan { get => puan; set => puan = value; }
+        public static Timer MyTimer { get => myTimer; set => myTimer = value; }
 
         //Oyun sınıfı ise oyunu başlatma ve bitirme görevlerini yerine getirecektir.
         public Oyun(string zorluk)
@@ -44,26 +45,37 @@ namespace Huntertheword
 
             sw.Start(); // stopwatch basladi
             
-            myTimer = new Timer(1000);
-            if (sw.Elapsed.Seconds < OyunSuresi)
+            MyTimer = new Timer(1000);
+            myTimer.Elapsed += OyunDongusu;
+
+            /*if (sw.Elapsed.Seconds < OyunSuresi)
                 myTimer.Elapsed += OyunDongusu;
             myTimer.AutoReset = true;
             myTimer.Enabled = true;
-
+            */
         }
 
         private void OyunDongusu(Object source, ElapsedEventArgs e)
         {
-            if (sw.Elapsed.Seconds < OyunSuresi)
-            {
-                hunterForm.sureAl(OyunSuresi - sw.Elapsed.Seconds);
-                Console.WriteLine(sw.Elapsed.Seconds);
-            }
+            /* if (sw.Elapsed.Seconds < OyunSuresi)
+             {
+                 hunterForm.sureAl(OyunSuresi - sw.Elapsed.Seconds);
+                 Console.WriteLine(sw.Elapsed.Seconds);
+             }
 
-            if (sw.Elapsed.Seconds >= OyunSuresi)
+             if (sw.Elapsed.Seconds >= OyunSuresi)
+             {
+                 sw.Stop();
+                 this.Bitir();
+             }*/
+            OyunSuresi--;
+            Console.WriteLine(oyunSuresi);
+            hunterForm.sureAl(oyunSuresi);
+            myTimer.Start();
+
+            if (OyunSuresi <= 0)
             {
-                sw.Stop();
-                this.Bitir();
+                myTimer.Stop();
             }
         }
 

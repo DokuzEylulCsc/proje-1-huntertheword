@@ -30,12 +30,15 @@ namespace Huntertheword
 
         private void kontrolEt_Click(object sender, EventArgs e)
         {
+
+            Oyun.MyTimer.Start();
             girdiDogruMu = Oyuncu.KullanicidanGirdiAl(kelimeGirisi.Text, AIyeSozcukTurunuGonderici_);
 
             if (girdiDogruMu == true)
                 TepkiVer();
             else
                 MessageBox.Show("Hatalı Giriş!");
+
         }
 
         private void TepkiVer()
